@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Login/Register Page</title>
-        <link rel="icon" class="fa-duotone fa-solid fa-computer">
+        <link rel="icon" type="image/x-icon" href="welcomepage/gallery/s7.png">        
         <link rel="stylesheet" href="style.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.0/css/all.min.css">
     </head>
@@ -91,8 +91,8 @@
         
         </div>
         
-        <!-- verification login -->
         
+        <!-- verification login -->        
          <script>
 
 // 1. Listen for the form submission event
@@ -105,18 +105,21 @@ document.getElementById("loginForm").addEventListener("submit", function(event) 
     var pass = document.getElementById("passInput").value;
 
     // 4. Validate the input values
-    if (user === "admin" && pass === "123") {
-       // alert("The information you have entered was correct");
+    if (user === "admin" && pass === "2026") {
+       // alert("The information you have entered was correct");  
+        document.getElementById("loginForm").reset();
         load("\welcomepage/welcome.html");
+       
     } else {
         alert("The information you have entered was wrong!!");
+        window.location.reload();
     }
    
-function load(url)
-{
- location.href=url;
-}
-});
+    function load(url)
+    {
+        location.href=url;
+    }
+    });
 </script>
         
         
