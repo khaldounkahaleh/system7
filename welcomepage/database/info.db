@@ -1,0 +1,9 @@
+INSERT INTO users
+(username,email,password,note)
+
+VALUES
+
+('admin',
+'admin@system7.com',
+'123456',
+'Administrator Account');
