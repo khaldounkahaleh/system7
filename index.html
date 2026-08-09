@@ -44,7 +44,7 @@
         <form action="#">
             <h1 style="background-color: yellow">Registration</h1>
             <div class="input-box">
-            <input type ="text" placeholder="Username" required>
+            <input type ="text" id="username" placeholder="Username" required>
                 <i class="fa-solid fa-user"></i>
             </div>
             <div class="input-box">
@@ -52,7 +52,7 @@
                 <i class="fa-sharp fa-solid fa-envelope"></i>
                  </div>
              <div class="input-box">
-            <input type ="password" placeholder="Password" required>
+            <input type ="password" id="password" placeholder="Password" required>
                 <i class="fa-solid fa-lock"></i>
                  </div>         
                  <button type="submit" class="btn">Register</button>
@@ -90,38 +90,52 @@
             <!-- Toggle box Right -->
         
         </div>
+                
+        <!-- verification login -->                        
         
-        
-        <!-- verification login -->        
-         <script>
-
-// 1. Listen for the form submission event
+    <script>
+            
 document.getElementById("loginForm").addEventListener("submit", function(event) {
-    // 2. Prevent the page from reloading automatically
     event.preventDefault(); 
-    
-    // 3. Grab the current text values from the input boxes
+
     var user = document.getElementById("userInput").value;
     var pass = document.getElementById("passInput").value;
 
-    // 4. Validate the input values
-    if (user === "admin" && pass === "2026") {
-       // alert("The information you have entered was correct");  
-        document.getElementById("loginForm").reset();
+if ( user == "root" && pass == "root") {
+  document.getElementById("loginForm").reset();
         load("\welcomepage/welcome.html");
-       
-    } else {
-        alert("The information you have entered was wrong!!");
+}
+else if( user == "admin" && pass == "admin") {
+
+    document.getElementById("loginForm").reset();
+        load("\welcomepage/welcome.html");
+}
+else if( user == "admin" && pass == "123") {
+
+    document.getElementById("loginForm").reset();
+        load("\welcomepage/welcome.html");
+}
+else if( user == "user" && pass == "pass") {
+
+    document.getElementById("loginForm").reset();
+        load("\welcomepage/welcome.html");
+}
+else if( user == "admin" && pass == "2026") {
+
+    document.getElementById("loginForm").reset();
+        load("\welcomepage/welcome.html");
+}
+else {
+     alert("The information you have entered was wrong!!");
         window.location.reload();
-    }
-   
-        function load(url)
+}
+   function load(url)
     {
         location.href=url;
     }
-    });
+    }); 
              
-</script>
+</script> 
         
         
     </body>
