@@ -1,0 +1,136 @@
+<html lang="en">
+    
+    <head>       
+   
+    <link rel="stylesheet" href="https://alpexcursion.com/css/style.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">      
+    <link rel="stylesheet" href="https://alpexcursion.com/css/front/main.css?v=09" as="style" onload="this.onload=null;this.rel='stylesheet'">
+
+       
+    </head>  
+    <!-- Clock body -->
+        <div id="swatch" style="display: inline-flex;">
+        <div id="clock">    
+        <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M4.42303 19.9996C4.42303 19.65 4.42974 19.2998 4.46677 18.956H0.317174C0.291939 19.2998 0.285156 19.65 0.285156 19.9996C0.285156 20.3564 0.291939 20.7002 0.317174 21.0438H4.46686C4.42974 20.7002 4.42303 20.3498 4.42303 19.9996Z" fill="black"></path>
+        <path d="M40.2538 18.956H36.1042H36.0602V21.0438H36.1042H40.2538C40.2792 20.7002 40.2851 20.3498 40.2851 19.9996C40.2851 19.65 40.2792 19.2998 40.2538 18.956Z" fill="black"></path>
+        <path d="M11.7614 6.62004C12.1533 6.37238 12.5539 6.13816 12.9604 5.93096C13.0165 5.90316 13.0643 5.87551 13.119 5.8548L11.051 2.2612C10.5339 2.52395 10.0292 2.81371 9.5397 3.13042L11.6089 6.72402C11.6579 6.68918 11.7127 6.65496 11.7614 6.62004Z" fill="black"></path>
+        <path d="M2.5491 10.7656L6.14135 12.8336L7.01058 11.3238L3.41694 9.25426C3.09942 9.74402 2.81005 10.2473 2.5491 10.7656Z" fill="black"></path>
+        <path d="M34.3558 27.3236C34.1409 27.7301 33.9139 28.1301 33.659 28.516C33.6249 28.5651 33.5889 28.6198 33.555 28.6683L37.1488 30.7363C37.4662 30.2472 37.7555 29.7511 38.0239 29.2341L34.4385 27.1591C34.4108 27.2132 34.3826 27.2689 34.3558 27.3236Z" fill="black"></path>
+        <path d="M6.21714 27.3171L6.13455 27.1591L2.5491 29.2271C2.80396 29.7454 3.09942 30.2472 3.41694 30.7363L7.01058 28.6683C6.97675 28.6198 6.94082 28.5651 6.9066 28.516C6.65925 28.1301 6.42464 27.73 6.21714 27.3171Z" fill="black"></path>
+        <path d="M38.0239 10.7655C37.7616 10.2473 37.4662 9.74402 37.1488 9.25426L33.555 11.3237L34.431 12.8336L38.0239 10.7655Z" fill="black"></path>
+        <path d="M11.7615 33.3718C11.7128 33.3376 11.658 33.3027 11.6089 33.268L9.5397 36.8614C10.0292 37.1791 10.5339 37.4752 11.051 37.7385L13.119 34.1442C13.0642 34.1243 13.0165 34.0958 12.9604 34.0687C12.554 33.8609 12.1534 33.6274 11.7615 33.3718Z" fill="black"></path>
+        <path d="M27.4443 5.84698L28.9546 6.72402L31.0236 3.13042C30.5342 2.81371 30.037 2.52395 29.5205 2.2612L27.4443 5.84698Z" fill="black"></path>
+        <path d="M19.241 35.8184V39.9624C19.5855 39.9936 19.9351 40 20.285 40C20.6353 40 20.9852 39.9936 21.3294 39.9624V35.8184V35.7751H19.241V35.8184Z" fill="black"></path>
+        <path d="M21.3294 4.18156V0.0376545C20.9852 0.00639998 20.6351 0 20.285 0C19.9351 0 19.5855 0.00639998 19.241 0.0376545V4.18156V4.225H21.3294V4.18156Z" fill="black"></path>
+        <path d="M27.4443 34.152L29.5205 37.7385C30.037 37.4687 30.5342 37.1791 31.0236 36.8614L28.9546 33.268L27.4443 34.152Z" fill="black"></path>
+        </svg>
+        <div class="hands">
+            <div hand="hour" style="transform: rotate(472deg);"></div>
+            <div hand="min" style="transform: rotate(264deg);"></div>
+            <div hand="sec" style="transform: rotate(144deg);"></div>
+        </div>
+    </div>
+    <div class="text-center pl-1" style="max-height: 70px;">
+        <div class="fs_13">
+            <img src="C:\Users\kkahaleh\OneDrive - Alghanim Industries\Desktop\Dynamic login page\kwt-flag.png" alt="">
+            KUWAIT
+        </div>
+        <div class="fs_22">
+            <span id="clock_h">15</span>
+            :
+            <span id="clock_m">44</span>
+            :
+            <span id="clock_s">00</span>    
+                       
+            <span id="clock_AP">PM</span>
+        </div>
+        <div class="fs_13">
+            <span id="weekday">Sun</span>,
+            <span id="monthname">Aug</span>
+            <span id="daydate">9</span>,
+            <span id="yeardate">26</span>
+        </div>
+    </div>
+</div>
+                    <!-- Clock body -->
+    
+<script>
+
+    const handHour = document.querySelector('#clock [hand="hour"]'),
+          handMin  = document.querySelector('#clock [hand="min"]'),
+          handSec  = document.querySelector('#clock [hand="sec"]'),
+
+          clock_w  = document.getElementById('weekday'),
+          clock_mo  = document.getElementById('monthname'),
+          clock_d  = document.getElementById('daydate'),
+          clock_y  = document.getElementById('yeardate'),
+
+          clock_h  = document.getElementById('clock_h'),
+          clock_m  = document.getElementById('clock_m'),
+          clock_s  = document.getElementById('clock_s');
+
+    function updateClock() {
+
+        function getDateTimePartsForTimeZone(timeZone) {
+            const datem = new Date();
+            const options = {
+                timeZone: timeZone,
+                month: 'short',
+                day: 'numeric',
+                weekday: 'short',
+                hour: 'numeric',
+                minute: 'numeric',
+                second: 'numeric',
+                hour12: true
+            };
+            const formatter = new Intl.DateTimeFormat('en-US', options);
+            const parts = formatter.formatToParts(datem);
+
+            const dateTimeParts = parts.reduce((acc, part) => {
+                if (part.type !== 'literal') {
+                    acc[part.type] = part.value;
+                }
+                return acc;
+            }, {});
+
+            return dateTimeParts;
+        }
+
+        const dateTimeParts = getDateTimePartsForTimeZone('Asia/Kuwait');
+
+        var h = dateTimeParts.hour,
+            m = dateTimeParts.minute,
+            s = dateTimeParts.second;
+
+
+
+       // clock_h.innerHTML = (h < 10) ? "0" + h : h;
+        clock_h.innerHTML = h;
+        clock_m.innerHTML = m;
+
+        clock_w.innerHTML = dateTimeParts.weekday;
+        clock_mo.innerHTML = dateTimeParts.month;
+        clock_d.innerHTML = dateTimeParts.day;
+        clock_s.innerHTML = dateTimeParts.second;
+
+
+        // h = h > 12 ? h - 12 : h;
+        h_deg = h * 30 + m / 2;
+        // set minute hand rotation
+        m_deg = m * 6 ;
+
+        s_deg = s * 6 ;
+
+        // console.log('Hour:', h, h_deg);
+        // console.log('Min:', m, m_deg);
+
+        handHour.style.transform = `rotate(${h_deg}deg)`;
+        handMin.style.transform  = `rotate(${m_deg}deg)`;
+        handSec.style.transform  = `rotate(${s_deg}deg)`;
+    }
+
+    updateClock();
+    setInterval(updateClock, 1000);
+
+</script>
+       

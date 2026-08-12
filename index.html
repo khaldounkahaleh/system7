@@ -5,9 +5,17 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Login/Register Page</title>
-        <link rel="icon" type="image/x-icon" href="welcomepage/gallery/s7.png">        
+        
+     <!-- clock  <link rel="stylesheet" href="https://alpexcursion.com/css/style.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">      
+        <link rel="stylesheet" href="https://alpexcursion.com/css/front/main.css?v=09" as="style" onload="this.onload=null;this.rel='stylesheet'"> -->
+        
+        <link rel="icon" type="image/x-icon" href="welcomepage/gallery/s7.png">      
         <link rel="stylesheet" href="style.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.0/css/all.min.css">
+       
+       
+  
+        
     </head>
     <body>
             
@@ -72,6 +80,43 @@
             
             <!-- Toggle box Left -->
             <div class="toggle-panel toggle-left">
+                
+               
+                
+                <!-- Clock body -->
+           <div id="swatch" style="display: inline-flex;">
+        <div id="clock">    
+     
+        <div class="hands">
+            <div hand="hour" style="transform: rotate(472deg);"></div>
+            <div hand="min" style="transform: rotate(264deg);"></div>
+            <div hand="sec" style="transform: rotate(144deg);"></div>
+        </div>
+    </div>
+    <div class="text-center pl-1" style="max-height: 70px;">
+        <div class="fs_13">
+            <img src="C:\Users\kkahaleh\OneDrive - Alghanim Industries\Desktop\Dynamic login page\kwt-flag.png" alt="">
+            KUWAIT City
+        </div>
+        <div class="fs_22">
+            <span id="clock_h">15</span>
+            :
+            <span id="clock_m">44</span>
+            :
+            <span id="clock_s">00</span>    
+                       
+            <span id="clock_ampm"></span>
+        </div>
+        <div class="fs_13">
+            <span id="weekday">Sun</span>,
+            <span id="monthname">Aug</span>
+            <span id="daydate">9</span>,
+            <span id="yeardate">26</span>
+        </div>
+    </div>
+</div>
+                    <!-- Clock body -->
+                <br>
             <h1>Welcome to..</h1><br>
                 <h1>System7</h1>
                 <p>Don't have an account?</p>
@@ -136,6 +181,90 @@ else {
     }); 
              
 </script> 
+        
+<script>
+
+    const handHour = document.querySelector('#clock [hand="hour"]'),
+          handMin  = document.querySelector('#clock [hand="min"]'),
+          handSec  = document.querySelector('#clock [hand="sec"]'),
+         
+          clock_w  = document.getElementById('weekday'),
+          clock_mo  = document.getElementById('monthname'),
+          clock_d  = document.getElementById('daydate'),
+          clock_y  = document.getElementById('yeardate'),
+
+          clock_h  = document.getElementById('clock_h'),
+          clock_m  = document.getElementById('clock_m'),
+          clock_s  = document.getElementById('clock_s'),
+          clock_ampm = document.getElementById('clock_ampm');
+         
+    function updateClock() {
+
+        function getDateTimePartsForTimeZone(timeZone) {
+            const datem = new Date();
+            const options = {
+                timeZone: timeZone,
+                month: 'short',
+                day: 'numeric',
+                weekday: 'short',
+                hour: 'numeric',
+                minute: 'numeric',
+                second: 'numeric',
+                hour12: true
+            };
+            const formatter = new Intl.DateTimeFormat('en-US', options);
+            const parts = formatter.formatToParts(datem);
+
+            const dateTimeParts = parts.reduce((acc, part) => {
+                if (part.type !== 'literal') {
+                    acc[part.type] = part.value;
+                }
+                return acc;
+            }, {});
+
+            return dateTimeParts;
+        }
+
+        const dateTimeParts = getDateTimePartsForTimeZone('Asia/Kuwait');
+
+        var h = dateTimeParts.hour,
+            m = dateTimeParts.minute,
+            s = dateTimeParts.second;
+            
+
+       // clock_h.innerHTML = (h < 10) ? "0" + h : h;
+        clock_h.innerHTML = h;
+        clock_m.innerHTML = m;
+        
+        // AM / PM
+    clock_ampm.innerHTML = dateTimeParts.dayPeriod;
+
+        clock_w.innerHTML = dateTimeParts.weekday;
+        clock_mo.innerHTML = dateTimeParts.month;
+        clock_d.innerHTML = dateTimeParts.day;
+        clock_s.innerHTML = dateTimeParts.second;
+     
+
+        // h = h > 12 ? h - 12 : h;
+        h_deg = h * 30 + m / 2;
+        // set minute hand rotation
+        m_deg = m * 6 ;
+
+        s_deg = s * 6 ;
+
+        // console.log('Hour:', h, h_deg);
+        // console.log('Min:', m, m_deg);
+
+        handHour.style.transform = `rotate(${h_deg}deg)`;
+        handMin.style.transform  = `rotate(${m_deg}deg)`;
+        handSec.style.transform  = `rotate(${s_deg}deg)`;   
+    }
+
+    updateClock();
+    setInterval(updateClock, 1000);
+
+</script>
+        
         
         
     </body>
