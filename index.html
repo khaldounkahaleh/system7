@@ -13,8 +13,21 @@
         <link rel="stylesheet" href="style.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.0/css/all.min.css">
        
-       
-  
+        <!-- blinking style -->
+       <style>
+            .blink {
+                animation: blinker 1.5s linear infinite;
+                color: yellow;
+                font-family: sans-serif;
+            }
+
+            @keyframes blinker {
+                50% {
+                    opacity: 0;
+                }
+            }
+        </style>
+    <!-- end of blinking style -->
         
     </head>
     <body>
@@ -23,7 +36,7 @@
             <!-- Login Form -->
         <div class="form-box login">       
         <form id="loginForm" action="#">
-            <h1>Login</h1>
+            <h1>Login</h1>         
             <div class="input-box">
             <input type ="text" id="userInput" name="user" placeholder="Username" required>
                 <i class="fa-solid fa-user"></i>
@@ -99,9 +112,9 @@
             KUWAIT City
         </div>
         <div class="fs_22">
-            <span id="clock_h">15</span>
+            <span id="clock_h">12</span>
             :
-            <span id="clock_m">44</span>
+            <span id="clock_m">59</span>
             :
             <span id="clock_s">00</span>    
                        
@@ -118,16 +131,25 @@
                     <!-- Clock body -->
                 <br>
             <h1>Welcome to..</h1><br>
-                <h1>System7</h1>
+                <h1 class="blink">System7</h1><br>
+                
+                <marquee style="color: lightgoldenrodyellow;" scrollamount="1" width="60%" direction="up" height="50px">
+                The place where the smart code is acting in different way..                 
+                </marquee>
+                
                 <p>Don't have an account?</p>
                 <button class="btn register-btn">Register</button>
             </div>
             
             <!-- Toggle box Right -->
             <div class="toggle-panel toggle-right">
-                <marquee style="color: greenyellow;" behavior="scroll" direction="left" scrollamount="6">
+                
+                <h3 class="blink">System7</h3>
+                
+                <marquee style="color: greenyellow;" behavior="scroll" direction="left" scrollamount="4">
                 At this time, we dont accept registration..!
                 </marquee><br>
+                
                 <h1>Welcome Back!</h1>
                 <p>Already have an acount?</p>
                 <button class="btn login-btn">Login</button>
